@@ -26,18 +26,17 @@ $breakpoints: (
 /* The prefered method of creating breakpoints */
 @mixin breakpoint($point)
 {
-  @if map-has-key($breakpoints, $point)
-  {
-    // Prints a media query based on the value
-    @media screen and (max-width: map-get($breakpoints, $point))
+    @if map-has-key($breakpoints, $point)
     {
-      @content;
+        // Prints a media query based on the value
+        @media screen and (min-width: map-get($breakpoints, $point))
+        {
+            @content;
+        }
     }
-  }
-
-  // If the key doesn't exist in the map
-  @else
-  {
-    @warn '`#{$point}` is not a defined breakpoint.  Please make sure it is defined in `$breakpoints` map.';
-  }
+    // If the key doesn't exist in the map
+    @else
+    {
+        @warn '`#{$point}` is not a defined breakpoint.  Please make sure it is defined in `$breakpoints` map.';
+    }
 }

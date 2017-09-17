@@ -1,0 +1,9 @@
+section:not(.te__hero)
+{
+    display: none;
+
+    @include breakpoint ('screen-sm')
+    {
+        display: block;
+    }
+}
