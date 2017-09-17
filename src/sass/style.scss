@@ -1,1 +1,7 @@
-@import 'settings/mixins';
+// Settings
+@import 'settings/bootstrap';
+@import 'settings/colors';
+@import 'settings/breakpoints';
+
+// Layout
+@import 'layout/base';
