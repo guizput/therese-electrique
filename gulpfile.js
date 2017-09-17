@@ -91,6 +91,8 @@ gulp.task('browser-sync', function() {
 gulp.task ('images', function(){
 	gulp.src('src/img/*')
 			.pipe(gulp.dest('app/img'));	
+	gulp.src('src/img/ui/*')
+			.pipe(gulp.dest('app/img/ui'));	
 });
 
 
