@@ -49,7 +49,7 @@ gulp.task('scripts', function(){
 		    extensions: "js",
 		    hardFail: true,
 		    includePaths: [
-		      __dirname + "/src/js/modules", __dirname + "/bower_components"
+		      __dirname + "/src/js/modules", __dirname + "/bower_components", __dirname + "/node_modules"
 		    ]
 		  }))
 		  .pipe(babel({presets: ['es2015']}))

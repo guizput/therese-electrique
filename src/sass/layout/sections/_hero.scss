@@ -40,16 +40,19 @@ $te__hero__logo-head: '../img/therese-electrique-logo-white-head.png';
     90%
     {
         transform: rotate(5deg);
+
         opacity: .7;
     }
     95%
     {
         transform: rotate(-5deg);
+
         opacity: 1;
     }
     100%
     {
         transform: translateY(0);
+
         opacity: 1;
     }
 }
@@ -130,6 +133,8 @@ $te__hero__logo-head: '../img/therese-electrique-logo-white-head.png';
         img
         {
             max-width: 100%;
+
+            pointer-events: none;
         }
     }
 }
