@@ -1,9 +1,11 @@
-section:not(.te__hero)
+html,
+body
 {
-    display: none;
+    font-size: 18px;
+}
 
-    @include breakpoint ('screen-sm')
-    {
-        display: block;
-    }
+p
+{
+    font-size: 1em;
+    line-height: 1.6em;
 }

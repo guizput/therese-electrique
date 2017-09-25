@@ -8,6 +8,7 @@
   margin-right: auto;
   margin-left: auto;
   max-width: $width;
+  @include clearfix;
 }
 
 // Creates a wrapper for a series of columns
