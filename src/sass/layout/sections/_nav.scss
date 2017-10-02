@@ -1,0 +1,95 @@
+// COLORS
+$te__nav__bkg: #000;
+$te__nav__text: #fff;
+
+.te__nav
+{
+    position: fixed;
+    z-index: 9000;
+    top: 0;
+    left: 0;
+
+    padding-right: 20px;
+    &__toggle
+    {
+        display: flex;
+
+        width: 40px;
+        height: 40px;
+        margin: 15px 0 0 15px;
+
+        cursor: pointer;
+
+        align-items: center;
+        span,
+        span:before,
+        span:after
+        {
+            position: relative;
+
+            display: block;
+
+            width: 40px;
+            height: 4px;
+
+            content: '';
+            transition: transform .3s ease-in-out;
+
+            background-color: $te__nav__text;
+            box-shadow: -5px 5px 10px 0 rgba(0,0,0,.61);
+        }
+        span:before
+        {
+            bottom: 12px;
+        }
+        span:after
+        {
+            top: 8px;
+        }
+        &--active
+        {
+            span
+            {
+                background: transparent;
+            }
+            span:before
+            {
+                top: 0;
+
+                transform: rotate(45deg);
+
+                transform-orgin: center;
+            }
+            span:after
+            {
+                top: -4px;
+
+                transform: rotate(-45deg);
+
+                transform-orgin: center;
+            }
+        }
+    }
+    &__list
+    {
+        position: relative;
+
+        margin: 15px;
+        padding: 0;
+
+        justify-content: space-evenly;
+        &__item
+        {
+            font-size: 1.4em;
+
+            margin-bottom: .5em;
+
+            list-style: none;
+
+            cursor: pointer;
+
+            color: $te__nav__text;
+            text-shadow: 5px 5px 5px $te__nav__bkg;
+        }
+    }
+}
