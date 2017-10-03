@@ -45,7 +45,10 @@ gulp.task('scripts', function() {
   gulp.src('src/js/app.js')
     .pipe(browserify({
       insertGlobals: true,
-      debug: !gulp.env.production
+      debug: !gulp.env.production,
+      alias: {
+        "babel-polyfill": './node_modules/babel-polyfill/dist/polyfill.js'
+      }
     }))
     .pipe(babel({
       presets: ['es2015']
