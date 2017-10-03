@@ -10,7 +10,6 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   babel = require("gulp-babel"),
   minifyHTML = require('gulp-minify-html-2'),
-  imagemin = require('gulp-imagemin'),
   rename = require('gulp-rename'),
   browserSync = require('browser-sync'),
   reload = browserSync.reload,
@@ -143,7 +142,6 @@ gulp.task('build', function() {
     .pipe(minifyHTML())
     .pipe(gulp.dest('build'));
   gulp.src('src/img/*')
-    .pipe(imagemin())
     .pipe(gulp.dest('build/img'));
 });
 // ////////////////////////////////////////////////
