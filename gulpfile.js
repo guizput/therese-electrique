@@ -15,7 +15,9 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync'),
   reload = browserSync.reload,
   watch = require('gulp-watch'),
-  browserify = require('gulp-browserify');
+  browserify = require('gulp-browserify'),
+  markdown = require('gulp-marked-json'),
+  concat = require('gulp-concat');
 // ////////////////////////////////////////////////
 // Preventing Gulp from breaking on error
 // // /////////////////////////////////////////////
@@ -23,6 +25,21 @@ function onError(error) {
   console.log(error.toString());
   this.emit('end');
 }
+// ////////////////////////////////////////////////
+// Content Task
+// // /////////////////////////////////////////////
+gulp.task('content', function() {
+  gulp.src('src/content/**/*.md')
+    .pipe(markdown({
+      pedantic: true,
+      smartypants: true
+    }))
+    .on('error', onError)
+    .pipe(gulp.dest('app/js/data'))
+    .pipe(reload({
+      stream: true
+    }));
+});
 // ////////////////////////////////////////////////
 // Styles Tasks
 // // /////////////////////////////////////////////
@@ -42,7 +59,8 @@ gulp.task('styles', function() {
 // Scripts Tasks
 // // /////////////////////////////////////////////
 gulp.task('scripts', function() {
-  gulp.src('src/js/app.js')
+  gulp.src(['src/js/modules/*.js', 'src/js/app.js'])
+    .pipe(concat('app.js'))
     .pipe(browserify({
       insertGlobals: true,
       debug: !gulp.env.production,
@@ -74,6 +92,7 @@ gulp.task('html', function() {
       prefix: '@@',
       basepath: './src/html/_modules/'
     }))
+    .on('error', onError)
     .pipe(gulp.dest('app'))
     .pipe(reload({
       stream: true
@@ -102,6 +121,7 @@ gulp.task('images', function() {
 // Watch Task
 // // /////////////////////////////////////////////
 gulp.task('watch', function() {
+  gulp.watch('src/content/**/*.md', ['content']);
   gulp.watch('src/sass/**/*.scss', ['styles']);
   gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('src/**/*.html', ['html']);
@@ -129,4 +149,4 @@ gulp.task('build', function() {
 // ////////////////////////////////////////////////
 // Default Task (for development only)
 // // /////////////////////////////////////////////
-gulp.task('default', ['styles', 'scripts', 'html', 'images', 'browser-sync', 'watch']);
+gulp.task('default', ['content', 'styles', 'scripts', 'html', 'images', 'browser-sync', 'watch']);
