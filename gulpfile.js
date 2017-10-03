@@ -58,6 +58,12 @@ gulp.task('scripts', function() {
     .pipe(reload({
       stream: true
     }));
+  gulp.src('src/js/libs/*.js')
+    .on('error', onError)
+    .pipe(gulp.dest('app/js'))
+    .pipe(reload({
+      stream: true
+    }));
 });
 // ////////////////////////////////////////////////
 // HTML Task
