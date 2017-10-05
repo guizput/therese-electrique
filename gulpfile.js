@@ -17,8 +17,11 @@ var gulp = require('gulp'),
   browserify = require('gulp-browserify'),
   markdown = require('gulp-marked-json'),
   concat = require('gulp-concat'),
-  imagemin = require('imagemin'),
-  imageminJpegRecompress = require('imagemin-jpeg-recompress');
+  imagemin = require('gulp-imagemin'),
+  imageminJpegRecompress = require('imagemin-jpeg-recompress'),
+  imageminGifsicle = require('imagemin-gifsicle'),
+  imageminOptipng = require('imagemin-optipng'),
+  imageminSvgo = require('imagemin-svgo');
 // ////////////////////////////////////////////////
 // Preventing Gulp from breaking on error
 // // /////////////////////////////////////////////
@@ -144,16 +147,18 @@ gulp.task('build', function() {
     .pipe(minifyHTML())
     .pipe(gulp.dest('build'));
   gulp.src('src/img/*')
-    .pipe(imagemin({
-      svgoPlugins: [{
-        removeViewBox: false
-      }],
-      use: [pngquant(), jpegtran(), optipng(), gifsicle(), imageminJpegRecompress({
-        accurate: true,
-        target: 0.6,
+    .pipe(imagemin([
+        imageminGifsicle({
+        interlaced: true,
+        optimizationLevel: 3
+      }),
+        imageminJpegRecompress({
+        max: 50,
         progressive: true
-      })]
-    }))
+      }),
+        imageminOptipng(),
+        imageminSvgo()
+    ]))
     .pipe(gulp.dest('build/img'));
 });
 // ////////////////////////////////////////////////
