@@ -1,0 +1,67 @@
+// COLORS
+$te__trio__bkg: #fff;
+$te__title: #fff;
+$te__text: #fff;
+
+.te__trio
+{
+    padding: 2em 0;
+
+    background-color: $te__trio__bkg;
+    &__container
+    {
+        @include container(100%);
+    }
+    &__title
+    {
+        padding-bottom: 2em;
+
+        text-align: center;
+    }
+    &__item
+    {
+        padding-bottom: 15px;
+
+        @include make-xs-column(12, 30px);
+        &__img
+        {
+            &--animated
+            {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                display: none;
+
+                width: 100%;
+                padding: 15px;
+            }
+        }
+        &__desc
+        {
+            position: absolute;
+            bottom: 30px;
+
+            width: 100%;
+            padding: 0 15px;
+            &--right
+            {
+                padding: 0 45px;
+
+                text-align: right;
+            }
+        }
+        &__title
+        {
+            margin: 0;
+
+            color: $te__title;
+        }
+        &__text
+        {
+            margin: 0;
+
+            color: $te__text;
+        }
+    }
+}
