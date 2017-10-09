@@ -4,7 +4,7 @@ $te__hero__bkg: black;
 // IMAGES
 $te__hero__img: '../img/grimaces-fast-optimize.gif';
 $te__hero__img--static: '../img/therese-electrique-32.jpg';
-$te__hero__logo: '../img/therese-electrique-logo-white.png';
+$te__hero__logo: '../img/therese-electrique-logo-white-2.png';
 $te__hero__logo-head: '../img/therese-electrique-logo-white-head.png';
 
 
@@ -30,25 +30,6 @@ $te__hero__logo-head: '../img/therese-electrique-logo-white-head.png';
     }
     align-items: flex-end;
     justify-content: center;
-    &:after
-    {
-        position: absolute;
-        z-index: 1;
-
-        display: block;
-
-        width: 100%;
-        height: 200px;
-
-        content: '';
-
-        background: linear-gradient(to bottom, rgba(195, 55, 2, 0) 50%, #c33702 70%, #c33702 100%);
-
-        @include breakpoint ('screen-lg')
-        {
-            height: 20%;
-        }
-    }
     &__logo
     {
         position: relative;

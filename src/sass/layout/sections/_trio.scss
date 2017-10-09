@@ -16,6 +16,8 @@ $te__text: #000;
     {
         padding-bottom: 15px;
 
+        text-align: center;
+
         @include make-xs-column(12, 4em);
         @include make-sm-column(4, 4em);
         @include breakpoint ('screen-sm')
@@ -26,17 +28,20 @@ $te__text: #000;
         {
             overflow: hidden;
 
+            max-width: 200px;
+
             border-radius: 100%;
             &--animated
             {
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: 50%;
 
                 display: none;
 
                 width: 100%;
-                padding: 0 2em;
+
+                transform: translateX(-50%);
             }
         }
         &__desc
