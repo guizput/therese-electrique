@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Le Contact
 email: igor@gmail.fr
 social:
   - icon: fa-facebook-official

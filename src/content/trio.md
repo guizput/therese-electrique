@@ -1,5 +1,5 @@
 ---
-title: Trio
+title: Les Gars
 musicians:
   - name: Igor
     instrument: Guitare & Chant

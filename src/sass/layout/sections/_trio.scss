@@ -1,16 +1,23 @@
 // COLORS
 $te__trio__bkg: #eee;
-$te__title: #000;
-$te__text: #000;
+$te__title: #fff;
+$te__text: #fff;
+$te__trio__bkg__img: '../img/trio-therese-electrique.jpg';
 
 .te__trio
 {
     padding: 4em 0;
 
+    background: url($te__trio__bkg__img) center center no-repeat;
     background-color: $te__trio__bkg;
+    background-size: cover;
     &__container
     {
         @include container(940px);
+    }
+    &__title
+    {
+        color: $te__title;
     }
     &__item
     {
@@ -30,6 +37,7 @@ $te__text: #000;
 
             max-width: 200px;
 
+            border: 2px solid $te__text;
             border-radius: 100%;
             &--animated
             {

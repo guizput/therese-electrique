@@ -1,16 +1,22 @@
 // COLORS
-$te__gallery_bkg: #eee;
+$te__gallery__bkg: black;
+$te__gallery__text: #fff;
+$te__gallery__bkg__img: '../img/gallery-therese-electrique-gallery.jpg';
 
 .te__gallery
 {
     padding: 4em 0;
 
-    background-color: $te__gallery_bkg;
+    background: url($te__gallery__bkg__img) center center no-repeat;
+    background-color: $te__gallery__bkg;
+    background-size: cover;
     &__title
     {
-        padding-bottom: 2em;
+        margin-bottom: 1em;
 
         text-align: center;
+
+        color: $te__gallery__text;
     }
     &__container
     {
@@ -37,6 +43,8 @@ $te__gallery_bkg: #eee;
         {
             width: 100%;
             height: auto;
+
+            border: 1px solid $te__gallery__text;
         }
     }
 }

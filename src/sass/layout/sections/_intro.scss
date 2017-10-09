@@ -7,6 +7,11 @@ $te__intro: #fff;
     padding: 4em 0;
 
     background-color: $te__intro__bkg;
+
+    @include breakpoint ('screen-sm')
+    {
+        padding: 8em 0 4em 0;
+    }
     &__container
     {
         text-align: center;

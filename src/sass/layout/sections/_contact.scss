@@ -11,6 +11,10 @@ $te__contact__text: #fff;
     {
         @include container(940px);
     }
+    &__title
+    {
+        color: $te__contact__text;
+    }
     &__email
     {
         text-align: center;
