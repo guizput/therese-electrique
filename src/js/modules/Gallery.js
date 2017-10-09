@@ -1,13 +1,12 @@
-let nav = new Vue({
-  el: '.te__nav',
+let gallery = new Vue({
+  el: '.te__gallery',
   data: {
-    name: 'nav',
+    name: 'gallery',
     comp: {}
   },
   created: function() {
     axios.get(`js/data/${this.name}.json`)
       .then(function(res) {
-        console.log(res.data);
         this.comp = res.data;
       }.bind(this))
       .catch(function(err) {

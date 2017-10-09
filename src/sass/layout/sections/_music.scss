@@ -41,10 +41,14 @@ $te__music__text: #fff;
     }
     &__soundcloud
     {
-        max-width: 400px;
-        height: 500px;
+        text-align: center;
 
         @include make-xs-column(12);
         @include make-sm-column(6);
+        iframe
+        {
+            max-width: 400px;
+            height: 500px;
+        }
     }
 }
