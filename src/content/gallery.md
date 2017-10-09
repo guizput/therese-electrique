@@ -1,5 +1,5 @@
 ---
-title: Photos
+title: Les photos
 photos:
   - src: img/gallery-therese-electrique-1.jpg
   - src: img/gallery-therese-electrique-2.jpg

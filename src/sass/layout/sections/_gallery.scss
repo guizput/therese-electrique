@@ -3,7 +3,15 @@ $te__gallery_bkg: #eee;
 
 .te__gallery
 {
+    padding: 4em 0;
+
     background-color: $te__gallery_bkg;
+    &__title
+    {
+        padding-bottom: 2em;
+
+        text-align: center;
+    }
     &__container
     {
         line-height: 0;
