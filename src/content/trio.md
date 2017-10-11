@@ -1,11 +1,11 @@
 ---
 title: Les Gars
 musicians:
-  - name: Igor
+  - name: Ig
     instrument: Guitare & Chant
     img: igor.jpg
     gif: igor.gif
-  - name: Valentin
+  - name: Val
     instrument: Drums
     img: val.jpg
     gif: val.gif
