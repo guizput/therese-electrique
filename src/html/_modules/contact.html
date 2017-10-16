@@ -5,8 +5,8 @@
       <a :href="'mailto:'+comp.email">{{ comp.email }}</a>
     </div>
     <div class="te__contact__social">
-      <div class="te__contact__social__item" v-for="social in comp.social">
-        <a href="social.link"><i :class="'fa ' + social.icon" aria-hidden="true"></i></a>
+      <div class="te__contact__social__item" v-for="item in comp.social">
+        <a :href="item.link"><i :class="'fa ' + item.icon" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>

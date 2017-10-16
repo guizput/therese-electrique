@@ -1,7 +1,7 @@
 ---
 title: Les Gars
 musicians:
-  - name: Ig
+  - name: Le Ig
     instrument: Guitare & Chant
     img: igor.jpg
     gif: igor.gif
