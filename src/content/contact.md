@@ -1,11 +1,11 @@
 ---
 title: Le Contact
-email: igor@gmail.fr
+email: therese.electrique@gmail.com
 social:
   - icon: fa-facebook-official
     link: "https://www.facebook.com/Th%C3%A9r%C3%A8se-%C3%89lectrique-142449093039985/"
   - icon: fa-youtube
-    link: #
+    link: "https://www.youtube.com/channel/UCH1HsXvZPYxHZYM0ER6wlNA"
   - icon: fa-soundcloud
     link: # 
 ---
