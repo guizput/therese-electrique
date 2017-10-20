@@ -64,4 +64,29 @@ $te__gallery__bkg__img: '../img/gallery-therese-electrique-gallery.jpg';
             transform: translate(-50%,-50%);
         }
     }
+    &__more
+    {
+        width: 100%;
+        padding: 4em 0 0 0;
+
+        text-align: center;
+        span
+        {
+            display: block;
+
+            color: $te__gallery__text;
+        }
+        svg
+        {
+            max-width: 50px;
+
+            cursor: pointer;
+            transition: transform .2s;
+            transform: translateY(0);
+            &:hover
+            {
+                transform: translateY(5px);
+            }
+        }
+    }
 }

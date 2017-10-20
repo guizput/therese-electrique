@@ -4,7 +4,8 @@ let gallery = new Vue({
     name: 'gallery',
     comp: {},
     DOM: {
-      activeClass: 'te__gallery__item--active'
+      activeClass: 'te__gallery__item--active',
+      limit: 5
     }
   },
   created: function() {
@@ -20,6 +21,11 @@ let gallery = new Vue({
     fullImage: function() {
       let item = event.target;
       item.classList.toggle(this.DOM.activeClass);
+    },
+    morePhotos: function() {
+      if (this.DOM.limit < this.comp.photos.length) {
+        this.DOM.limit += 2;
+      }
     }
   }
 });
