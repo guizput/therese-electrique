@@ -22,12 +22,17 @@ $te__contact__text: #fff;
         @include make-xs-column(12);
         a
         {
-            font-size: 1.4em;
+            font-size: 1em;
             font-weight: 300;
 
             text-decoration: none;
 
             color: $te__contact__text;
+
+            @include breakpoint ('screen-sm')
+            {
+                font-size: 1.4em;
+            }
         }
     }
     &__social
