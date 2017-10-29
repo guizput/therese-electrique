@@ -7,5 +7,5 @@ social:
   - icon: fa-youtube
     link: "https://www.youtube.com/channel/UC-UUcw569wihpUucMlU42hw"
   - icon: fa-soundcloud
-    link: # 
+    link: "https://soundcloud.com/therese-electrique"
 ---
