@@ -81,8 +81,9 @@ gulp.task('scripts', function() {
       stream: true
     }));
   gulp.src('src/js/libs/*.js')
+    .pipe(concat('lib.js'))
     .on('error', onError)
-    .pipe(gulp.dest('app/js'))
+    .pipe(gulp.dest('app/js/lib'))
     .pipe(reload({
       stream: true
     }));
