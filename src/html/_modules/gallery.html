@@ -1,8 +1,8 @@
-<section class="te__gallery">
+<section class="te__gallery" v-if="DOM.loaded">
   <h2 class="te__gallery__title">{{ comp.title }}</h2>
   <div class="te__gallery__container">
-    <div class="te__gallery__item" v-for="n in DOM.limit" v-on:click="fullImage()">
-      <img :src="comp.photos[n-1].src" :alt="'Thérèse Electrique gallerie ' + n" />
+    <div class="te__gallery__item" v-for="photo in comp.photos.slice(0,DOM.limit)" v-on:click="fullImage()">
+      <img :src="photo.src" :alt="photo.src" />
     </div>
   </div>
   <div class="te__gallery__more" v-if="DOM.limit < comp.photos.length">
