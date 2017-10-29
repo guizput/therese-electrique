@@ -36,7 +36,8 @@ gulp.task('content', function() {
   gulp.src('src/content/**/*.md')
     .pipe(markdown({
       pedantic: true,
-      smartypants: true
+      smartypants: true,
+      expand: true
     }))
     .on('error', onError)
     .pipe(gulp.dest('app/js/data'))
@@ -139,6 +140,8 @@ gulp.task('build', function() {
   gulp.src('app/css/**/*.css')
     .pipe(cleanCSS())
     .pipe(gulp.dest('build/css'));
+  gulp.src('app/js/data/*.json')
+    .pipe(gulp.dest('build/js/data'));
   gulp.src('app/js/**/*.js')
     .pipe(uglify({
       mangle: false
