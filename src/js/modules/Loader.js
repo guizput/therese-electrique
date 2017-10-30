@@ -11,11 +11,10 @@ let loader = new Vue({
   },
   methods: {
     removeWhenLoaded: function() {
-      let element = document.querySelectorAll('.te__loader');
-      element[0].classList.add(this.outClass);
+      this.$refs.loader.classList.add(this.outClass);
       setTimeout(function() {
-        element[0].remove();
-      }, 200);
+        this.$refs.loader.remove();
+      }.bind(this), 200);
     }
   }
 });
