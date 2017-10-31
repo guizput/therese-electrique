@@ -11,9 +11,9 @@ let loader = new Vue({
   },
   methods: {
     removeWhenLoaded: function() {
-      this.$refs.loader.classList.add(this.outClass);
+      loader.$el.classList.add(this.outClass);
       setTimeout(function() {
-        this.$refs.loader.remove();
+        loader.$el.remove();
       }.bind(this), 200);
     }
   }
