@@ -150,7 +150,7 @@ gulp.task('build', function() {
   gulp.src('app/*.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('build'));
-  gulp.src('src/img/*')
+  gulp.src('src/img/**/*')
     .pipe(imagemin([
         imageminGifsicle({
         interlaced: true,
