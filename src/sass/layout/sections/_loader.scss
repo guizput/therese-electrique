@@ -1,0 +1,28 @@
+.te__loader
+{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    transition: opacity .2s;
+
+    opacity: 1;
+    background-color: white;
+
+    align-items: center;
+    justify-content: center;
+    img
+    {
+        width: 400px;
+    }
+    &--out
+    {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,86 @@
+// COLORS
+$te__trio__bkg: #eee;
+$te__title: #fff;
+$te__text: #fff;
+$te__trio__bkg__img: '../img/trio-therese-electrique.jpg';
+
+.te__trio
+{
+    padding: 4em 0;
+
+    background: url($te__trio__bkg__img) center center no-repeat;
+    background-color: $te__trio__bkg;
+    background-size: cover;
+    &__container
+    {
+        @include container(940px);
+    }
+    &__title
+    {
+        color: $te__title;
+    }
+    &__item
+    {
+        padding-bottom: 15px;
+
+        text-align: center;
+
+        @include make-xs-column(12, 4em);
+        @include make-sm-column(4, 4em);
+        @include breakpoint ('screen-sm')
+        {
+            padding-bottom: 0;
+        }
+        &__img
+        {
+            overflow: hidden;
+
+            max-width: 200px;
+
+            border: 2px solid $te__text;
+            border-radius: 100%;
+            &--animated
+            {
+                position: absolute;
+                top: 0;
+                left: 50%;
+
+                display: none;
+
+                width: 100%;
+
+                transform: translateX(-50%);
+            }
+        }
+        &__desc
+        {
+            padding: 1em 0;
+
+            text-align: center;
+
+            @include breakpoint ('screen-sm')
+            {
+                padding: 0;
+            }
+        }
+        &__title
+        {
+            margin: 0;
+
+            color: $te__title;
+        }
+        &__text
+        {
+            margin: 0;
+
+            color: $te__text;
+        }
+        &:hover
+        {
+            .te__trio__item__img--animated
+            {
+                display: block;
+            }
+        }
+    }
+}

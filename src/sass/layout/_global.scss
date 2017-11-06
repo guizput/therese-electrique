@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Monoton|Permanent+Marker|Rock+Salt');
+
+
+html,
+body
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+h2
+{
+    font-family: 'Libre Barcode 39 Text', cursive;
+    font-size: 3em;
+    font-weight: 300;
+
+    margin: 0;
+    padding: .5em 0;
+
+    text-align: center;
+
+    @include make-xs-column(12);
+    @include make-sm-column(12, 0);
+}
+
+p
+{
+    font-size: 1em;
+    line-height: 1.6em;
+}
+
+img
+{
+    max-width: 100%;
+}
