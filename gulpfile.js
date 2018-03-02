@@ -21,7 +21,10 @@ var gulp = require('gulp'),
   imageminJpegRecompress = require('imagemin-jpeg-recompress'),
   imageminGifsicle = require('imagemin-gifsicle'),
   imageminOptipng = require('imagemin-optipng'),
-  imageminSvgo = require('imagemin-svgo');
+  imageminSvgo = require('imagemin-svgo'),
+  fs = require('fs'),
+  pkg = JSON.parse(fs.readFileSync('./package.json')),
+  template = require('gulp-template');
 // ////////////////////////////////////////////////
 // Preventing Gulp from breaking on error
 // // /////////////////////////////////////////////
@@ -55,6 +58,7 @@ gulp.task('styles', function() {
     }))
     .on('error', onError)
     .pipe(autoprefixer('last 9 versions'))
+    .pipe(rename('style.' + pkg.version + '.css'))
     .pipe(gulp.dest('app/css'))
     .pipe(reload({
       stream: true
@@ -77,6 +81,7 @@ gulp.task('scripts', function() {
       presets: ['es2015']
     }))
     .on('error', onError)
+    .pipe(rename('app.' + pkg.version + '.js'))
     .pipe(gulp.dest('app/js'))
     .pipe(reload({
       stream: true
@@ -94,6 +99,9 @@ gulp.task('scripts', function() {
 // // /////////////////////////////////////////////
 gulp.task('html', function() {
   gulp.src('src/html/**/*.html')
+    .pipe(template({
+      version: pkg.version
+    }))
     .pipe(fileinclude({
       prefix: '@@',
       basepath: './src/html/_modules/'

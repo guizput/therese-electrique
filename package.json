@@ -26,6 +26,7 @@
     "gulp-marked-json": "^1.0.0",
     "gulp-minify-html-2": "^1.0.0",
     "gulp-sass": "^2.3.2",
+    "gulp-template": "^5.0.0",
     "gulp-watch": "^4.3.11",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-optipng": "^5.2.1",
