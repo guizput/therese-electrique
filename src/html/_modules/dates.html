@@ -1,0 +1,8 @@
+<section class="te__dates">
+  <div class="te__dates__container">
+    <h2>{{ comp.title }}</h2>
+    <ul>
+      <li v-for="gig in comp.gigs"><strong>{{ gig.date }}</strong> - {{ gig.name }} - <em>{{ gig.place }}</em></li>
+    </ul>
+  </div>
+</section>
