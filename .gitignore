@@ -3,7 +3,6 @@
 
 # Ignore build files
 app/
-build/
 
 ### macOS ###
 *.DS_Store

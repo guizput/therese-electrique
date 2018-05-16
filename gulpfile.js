@@ -17,11 +17,6 @@ var gulp = require('gulp'),
   browserify = require('gulp-browserify'),
   markdown = require('gulp-marked-json'),
   concat = require('gulp-concat'),
-  imagemin = require('gulp-imagemin'),
-  imageminJpegRecompress = require('imagemin-jpeg-recompress'),
-  imageminGifsicle = require('imagemin-gifsicle'),
-  imageminOptipng = require('imagemin-optipng'),
-  imageminSvgo = require('imagemin-svgo'),
   fs = require('fs'),
   pkg = JSON.parse(fs.readFileSync('./package.json')),
   template = require('gulp-template');
@@ -147,31 +142,19 @@ gulp.task('watch', function() {
 gulp.task('build', function() {
   gulp.src('app/css/**/*.css')
     .pipe(cleanCSS())
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest('docs/css'));
   gulp.src('app/js/data/*.json')
-    .pipe(gulp.dest('build/js/data'));
+    .pipe(gulp.dest('docs/js/data'));
   gulp.src('app/js/**/*.js')
     .pipe(uglify({
       mangle: false
     }))
-    .pipe(gulp.dest('build/js'));
+    .pipe(gulp.dest('docs/js'));
   gulp.src('app/*.html')
     .pipe(minifyHTML())
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('docs'));
   gulp.src('src/img/**/*')
-    .pipe(imagemin([
-        imageminGifsicle({
-        interlaced: true,
-        optimizationLevel: 3
-      }),
-        imageminJpegRecompress({
-        max: 50,
-        progressive: true
-      }),
-        imageminOptipng(),
-        imageminSvgo()
-    ]))
-    .pipe(gulp.dest('build/img'));
+    .pipe(gulp.dest('docs/img'));
 });
 // ////////////////////////////////////////////////
 // Default Task (for development only)
