@@ -11,7 +11,7 @@
 
 ?>
 
-<script src="assets/js/lightgallery.min.js"></script>
+<script src="<?php echo get_template_directory_uri() ?>/assets/js/lightgallery.min.js"></script>
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery')); 
 </script>

@@ -54,7 +54,7 @@ get_header();
 ?>
 
 	<section class="te__hero" style="background: url(<?php echo $hero_image['url']; ?>) center center no-repeat; background-size: cover;">
-    <div class="te__hero__logo" style="background: url(assets/img/therese-electrique-logo-white-2.png) center center no-repeat; background-size: cover;"></div>
+    <div class="te__hero__logo" style="background: url(<?php echo get_template_directory_uri() ?>/assets/img/therese-electrique-logo-white-2.png) center center no-repeat; background-size: cover;"></div>
   </section>
   <section class="te__intro"  >
     <div class="te__intro__container">
@@ -139,17 +139,17 @@ get_header();
       <div class="te__contact__social">
         <div class="te__contact__social__item">
           <a href="<?php echo $facebook ?>">
-            <img style="width: 30px" src="assets/img/facebook.png" alt="Facebook" />
+            <img style="width: 30px" src="<?php echo get_template_directory_uri() ?>/assets/img/facebook.png" alt="Facebook" />
           </a>
         </div>
         <div class="te__contact__social__item">
           <a href="<?php echo $youtube ?>">
-            <img style="width: 30px" src="assets/img/youtube.png" alt="Youtube" />
+            <img style="width: 30px" src="<?php echo get_template_directory_uri() ?>/assets/img/youtube.png" alt="Youtube" />
           </a>
         </div>
         <div class="te__contact__social__item">
           <a href="<?php echo $soundcloud ?>">
-            <img style="width: 30px" src="assets/img/soundcloud.png" alt="SoundCloud" />
+            <img style="width: 30px" src="<?php echo get_template_directory_uri() ?>/assets/img/soundcloud.png" alt="SoundCloud" />
           </a>
         </div>
       </div>
