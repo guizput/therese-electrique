@@ -10,7 +10,7 @@
  */
 
 ?>
-
+<?php wp_footer(); ?>
 <script src="<?php echo get_template_directory_uri() ?>/assets/js/lightgallery.min.js"></script>
 <script type="text/javascript">
     lightGallery(document.getElementById('lightgallery')); 
